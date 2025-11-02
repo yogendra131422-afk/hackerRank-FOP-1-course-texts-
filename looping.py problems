@@ -1,0 +1,113 @@
+Looping problems and solutions 
+1.Looping - Adam’s Charity
+Adam runs a small charity organization. Every month, he collects donations from several donors.
+He wants to calculate the total amount collected, the average donation, and identify the highest and lowest donations
+
+solution :
+n = int(input())
+
+total_coins = 0
+for i in range(1, n + 1):
+    total_coins += i * i
+
+print(total_coins)
+
+
+
+
+
+2.Looping - Car Speed
+A traffic monitoring system records the speed of several cars passing through a highway checkpoint. 
+The system needs to analyze the data to help the traffic police.
+
+solution :
+N = int(input())
+
+total = 0
+for i in range(1, N + 1):
+    if N % i == 0:
+        total += i
+
+print(total)
+
+
+
+
+3.Looping - Quality Check for Premium Products
+A company manufactures premium electronic products. Each product must pass a quality check test before it is approved for sale.
+The test assigns each product a quality score (between 0 and 100).
+
+solution :
+N = int(input())
+
+if N <= 1:
+    print("Regular Product")
+elif N == 2:
+    print("Premium Product")
+elif N % 2 == 0:
+    print("Regular Product")
+else:
+    is_prime = True
+    for i in range(3, int(N**0.5) + 1, 2):
+        if N % i == 0:
+            is_prime = False
+            break
+    
+    if is_prime:
+        print("Premium Product")
+    else:
+        print("Regular Product")
+
+
+
+
+
+4.Looping - Coding Marathon
+A college is organizing a Coding Marathon event where several students participate to test their programming skills.
+Each participant solves a certain number of problems within a given time.
+The event coordinator wants to analyze the results to understand overall performance.
+
+solution :
+N = int(input())
+K = int(input())
+marks = list(map(int, input().split()))
+
+# Sort marks in descending order
+marks.sort(reverse=True)
+
+# Sum the top K marks
+top_k_sum = sum(marks[:K])
+
+print(top_k_sum)
+
+
+
+
+
+5.Looping - Inventory Check for Rare Items
+A museum maintains a special inventory of rare items. Each item has a uniqueness score
+(ranging from 1 to 100) that indicates how rare or valuable it is.
+The museum curator wants to analyze the collection and categorize the items based on their uniqueness scores.
+
+solution :
+import math
+
+N = int(input())
+
+# Calculate sum of factorials of digits
+sum_factorials = 0
+for digit in str(N):
+    sum_factorials += math.factorial(int(digit))
+
+# Check if it's a Strong Number
+if sum_factorials == N:
+    print("Rare Item")
+else:
+    print("Common Item")
+
+
+
+
+
+
+
